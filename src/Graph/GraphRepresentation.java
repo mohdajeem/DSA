@@ -28,10 +28,12 @@ public class GraphRepresentation {
 
     public static void main(String[] args) {
         System.out.println("this is my starting of java Graph DSA");
-        GraphRepresentation g = new GraphRepresentation(3);
+        GraphRepresentation g = new GraphRepresentation(4);
         g.addEdge(1, 2);
         g.addEdge(1, 0);
         g.addEdge(0, 2);
+        g.addEdge(3, 2);
+        g.addEdge(3, 0);
         g.printEdge();
     }
 
