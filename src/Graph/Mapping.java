@@ -8,6 +8,8 @@ public class Mapping {
         mp.put(133, "Mathematics book");
         mp.put(188, "DSA book for java");
         System.out.println(mp.get(123));
+        mp.remove(123);
+        System.out.println();
 
     }
 }
