@@ -42,6 +42,22 @@ public class NumberOfProvinces {
         int provinces = noOfProvince(adjL, vis, n);
         System.out.println(provinces);
 
+
+        System.out.println("CONVERT ADJACENCY MATRIX INTO ADJACENCY LIST : ");
+        int[][] adjMatrix = {{1,1,0},{1,1,0},{0,0,1}};
+        List<ArrayList<Integer>> adjList = new ArrayList<>();
+        for(int i = 0;i<=3;i++){
+            adjList.add(new ArrayList<>());
+        }
+        adjMatrixToAdjList(adjMatrix, adjList);
+        for(ArrayList lt : adjList){
+            System.out.println(lt);
+        }
+        int n1 = 3;
+        boolean[] vis1 = new boolean[n1+1];
+        int checkProvince = noOfProvince(adjList, vis1, n1);
+        System.out.println(checkProvince);
+
     }
     private static void bfs(List<ArrayList<Integer>> adjL, int strPoint, boolean[] vis){
         Queue<Integer> q = new LinkedList<>();;
@@ -66,5 +82,19 @@ public class NumberOfProvinces {
             }
         }
         return c;
+    }
+    //List<ArrayList<Integer>> adjL = new ArrayList<>();
+    public static void adjMatrixToAdjList(int[][] adjMatrix,List<ArrayList<Integer>> adjL){
+        for(int i = 0;i<adjMatrix.length;i++){
+            for(int j = 0;j<adjMatrix[0].length;j++){
+                if(i == j){
+                    continue;
+                }
+                if(adjMatrix[i][j]==1){
+                    adjL.get(i+1).add(j+1);
+                }
+            }
+        }
+        // return adjL;
     }
 }
