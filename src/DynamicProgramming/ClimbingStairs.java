@@ -45,4 +45,11 @@ public class ClimbingStairs {
         qb[n] = cp;
         return cp;
     }
+
+    public static int countsPathsByIter(int n){
+        if(n == 1) return n;
+
+        for(int i = )
+    }
+
 }
